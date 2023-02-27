@@ -1,5 +1,5 @@
 class AstrosController < ApplicationController
-  before_action :set_astro, only: %i[show edit create update destroy]
+  before_action :set_astro, only: %i[show edit update destroy]
 
   def index
     @astros = Astro.all
@@ -14,6 +14,7 @@ class AstrosController < ApplicationController
 
   def create
     @astro = Astro.new(astro_params)
+    @astro.user = current_user
     if @astro.save
       redirect_to astro_path(@astro)
     else
