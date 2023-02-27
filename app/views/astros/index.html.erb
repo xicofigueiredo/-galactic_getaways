@@ -9,18 +9,6 @@
 </div>
 
 
-<div class ="cards">
-  <% @astros.each do |astro| %>
-     <li link_to, astro_path(astro)><div class="card-category" style="background-image: url(https://picsum.photos/500/300)">
-        <%=link_to astro.name, astro_path(astro)%>
-    </li>
-  <% end %>
-</div>
-
-
-
-
-
 <div class="cards">
   <% @astros.each do |astro| %>
     <li>
