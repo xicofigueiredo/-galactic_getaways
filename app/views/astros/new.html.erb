@@ -11,7 +11,7 @@
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :daily_price %>
-      <%= f.input :category, collection: ['Planet', 'Commet', 'Asteroid', 'Star', 'Galaxy'] %>
+      <%= f.input :category, collection: Astro.categories.keys.map(&:capitalize) %>
       <%= f.submit %>
     <% end %>
   </div>

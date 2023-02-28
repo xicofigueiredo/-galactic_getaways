@@ -38,7 +38,7 @@ class AstrosController < ApplicationController
   private
 
   def astro_params
-    params.require(:astro).permit(:name, :description, :daily_price, :category)
+    params.require(:astro).permit(:name, :description, :daily_price, params[:astro][:category].downcase)
   end
 
   def set_astro
