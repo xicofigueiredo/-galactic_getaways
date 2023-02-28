@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:show]
+
+  get '/planets', to: 'pages#planets'
+  get '/commets', to: 'pages#commets'
+  get '/asteroids', to: 'pages#asteroids'
+  get '/stars', to: 'pages#stars'
+  get '/galaxies', to: 'pages#galaxies'
 end
