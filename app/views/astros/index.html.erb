@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Our astros getaways</strong></h1>
     <p>check out your favourite celestial bodies to rent</p>
-    <p><%=link_to "Make new astro", new_astro_path, class:"btn btn-flat"  %></p>
+    <p><%=link_to "Make new astro", new_astro_path, class:"btn-ghost"  %></p>
   </div>
 </div>
 
@@ -11,17 +11,19 @@
     <div class="cards">
         <% @astros.each do |astro| %>
           <li>
-            <div class="card-trip">
-              <img src="https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80" />
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= astro.name %></h2>
-                  <p><%= astro.description %></p>
+           <%= link_to astro_path(astro), style:"text-decoration:none; color:black" do %>
+              <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= astro.name %></h2>
+                    <p><%= astro.description %></p>
+                  </div>
+                  <h2 class="card-trip-pricing">€<%= astro.daily_price %> per day</h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                 </div>
-                <h2 class="card-trip-pricing">€<%= astro.daily_price %> per day</h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
               </div>
-            </div>
+            <% end %>
           </li>
         <% end %>
     </div>
