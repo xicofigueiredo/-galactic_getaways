@@ -6,11 +6,10 @@
 </div>
 
 <div class="container">
-  <%= form_with model: @astro do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+  <%= simple_form_for(@astro) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :daily_price %>
     <%= f.submit %>
   <% end %>
  <p><%= link_to "Go back to the Astro list without saving", astros_path %></p>
