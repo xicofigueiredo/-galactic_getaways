@@ -1,16 +1,16 @@
 <div class="small_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1675&q=80);">
   <div class="container">
     <h1><%= @astro.name %></h1>
+    <p><%= @astro.description%></p>
   </div>
 </div>
 
 <div class="container">
 
 
-  <p><%= @astro.description%></p>
   <p>Price per night: <%= @astro.daily_price%>€</p>
   <p>Rating<%= @astro.rating %> Stars</p>
-
+  <p>Type of astro: <%= @astro.category %></p>
 
   <%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %>
   <%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %>
