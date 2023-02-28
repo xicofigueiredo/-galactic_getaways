@@ -1,10 +1,10 @@
 <div class="container">
-  <%= form_with model: @task do |f| %>
+  <%= form_with model: @astro do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :description %>
     <%= f.text_field :description %>
     <%= f.submit %>
   <% end %>
-  <p><%= link_to "Back to list", astros_path %></p>
+ <p><%= link_to "Go back to the Astro list without saving", astros_path %></p>
 </div>
