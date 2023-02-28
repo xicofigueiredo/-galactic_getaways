@@ -8,29 +8,37 @@
 
 .search-form-control .btn {
   position: absolute;
-  top: 1px;
+  text-align: center;
+  top: -4px;
   bottom: 1px;
-  right: 8px;
-  color: rgb(255, 255, 255);
+  right: -51px;
+  color: rgb(254, 254, 255);
   background-color: #12111100;
   border-radius: 27px;
+  border: #121111;
+  align-items: center;
 
 }
 
 .search-form-control .form-control {
   height: 2rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
+  border: 1px solid #f7f7f7;
   background-color: #121111;
   border-radius: 27px;
 
 }
 
 .search-form-control .form-control:focus {
-  border: 1px solid #1EDD88;
+  border: 1px solid #b275e3;
+  color: white;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   background-color: #121111;
   border-radius: 27px;
 
+}
+
+.form-control {
+  color: white;
 }
