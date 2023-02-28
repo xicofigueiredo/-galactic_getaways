@@ -27,7 +27,7 @@ class AstrosController < ApplicationController
 
   def update
     @astro.update(astro_params)
-    redirect_to astros_path
+    redirect_to astro_path(@astro)
   end
 
   def destroy

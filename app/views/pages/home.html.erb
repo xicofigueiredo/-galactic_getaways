@@ -13,28 +13,52 @@
   <h2> What are you looking for?</h2>
 
   <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1545156521-77bd85671d30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80)">
-      planets
+    <div>
+      <%= link_to planets_path, style:"text-decoration:none; color:black" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1545156521-77bd85671d30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80)">
+        Planets
+      </div>
+      <% end %>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.mos.cms.futurecdn.net/KLXJHZX37JfEjgsppM2qmG.jpg)">
-      commets
+    <div>
+      <%= link_to commets_path, style:"text-decoration:none; color:black" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.mos.cms.futurecdn.net/KLXJHZX37JfEjgsppM2qmG.jpg)">
+        Commets
+      </div>
+      <% end %>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ychef.files.bbci.co.uk/976x549/p069v5xs.jpg)">
-      asteroids
+    <div>
+      <%= link_to asteroids_path, style:"text-decoration:none; color:black" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ychef.files.bbci.co.uk/976x549/p069v5xs.jpg)">
+        Asteroids
+      </div>
+      <% end %>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpapercrafter.com/desktop/149880-space-Sun-space-art-digital-art.jpg)">
-      stars
+    <div>
+      <%= link_to stars_path, style:"text-decoration:none; color:black" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpapercrafter.com/desktop/149880-space-Sun-space-art-digital-art.jpg)">
+        Stars
+      </div>
+      <% end %>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/800px-Andromeda_Galaxy_560mm_FL.jpg)">
-      full galaxies
+    <div>
+      <%= link_to galaxies_path, style:"text-decoration:none; color:black" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/800px-Andromeda_Galaxy_560mm_FL.jpg)">
+        Galaxies
+      </div>
+      <% end %>
     </div>
 
+    <div>
+      <%= link_to astros_path, style:"text-decoration:none; color:black" do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1179&q=80)">
-      View all
+        View All
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
