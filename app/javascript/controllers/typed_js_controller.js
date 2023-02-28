@@ -5,7 +5,7 @@ import Typed from "typed.js"
 export default class extends Controller {
   connect() {
     new Typed(this.element, {
-      strings: ["Planets, Commets, Asteroids, Stars & Full Galaxies!"],
+      strings: ['Planets, Commets, Asteroids, Stars & Full Galaxies!'],
       typeSpeed: 50,
       loop: true
     })
