@@ -1,7 +1,7 @@
 <div class="index_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1612344026448-92fb6300b4e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2874&q=80);">
   <div class="container">
-    <h1>Our astros getaways</strong></h1>
-    <p>check out your favourite celestial bodies to rent</p>
+    <h1>Planets</strong></h1>
+    <p>check out your favourite planets bodies to rent</p>
     <p><%=link_to "Make new astro", new_astro_path, class:"btn-ghost"  %></p>
   </div>
 </div>
@@ -9,7 +9,7 @@
 <div class="container">
   <ul>
     <div class="cards">
-        <% @astros.where (category:planet) each do |astro| %>
+        <% @planets.each do |astro| %>
           <li>
            <%= link_to astro_path(astro), style:"text-decoration:none; color:black" do %>
               <div class="card-trip">
