@@ -17,9 +17,5 @@
 
   <%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
-  <%= link_to astro_path(@astro), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-    <i class="fa-solid fa-trash-can"></i>
-  <% end %>
-
 
 </div>
