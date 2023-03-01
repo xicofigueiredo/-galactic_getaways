@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!
   def home
     @astros = Astro.limit(6).order('created_at DESC')
   end
