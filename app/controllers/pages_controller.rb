@@ -23,4 +23,13 @@ class PagesController < ApplicationController
   def galaxies
     @galaxies = Astro.where(category: "galaxy")
   end
+
+  def mylistings
+    @astros = current_user.owned_astros
+  end
+
+  def mybookings
+    @bookings = current_user.bookings
+  end
+
 end

@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get '/asteroids', to: 'pages#asteroids'
   get '/stars', to: 'pages#stars'
   get '/galaxies', to: 'pages#galaxies'
+  get '/mylistings', to: 'pages#mylistings'
+  get '/mybookings', to: 'pages#mybookings'
 end

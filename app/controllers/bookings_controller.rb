@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
     @astro = Astro.find(params[:astro_id])
     @booking.astro = @astro
     if @booking.save
+      flash[:notice] = "Your booking is confirmed"
       redirect_to astro_path(@astro)
     else
       render :new, status: :unprocessable_entity
