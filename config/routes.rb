@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :astros do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create] do
+      member do
+        get :confirm
+      end
+    end
   end
 
   resources :bookings, only: [:show]

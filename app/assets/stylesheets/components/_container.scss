@@ -1,4 +1,26 @@
 .container {
-margin: 30px;
+margin: 40px;
 // padding-top: 100px;
+}
+
+
+.booking_container {
+  margin: 40px;
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.booking_card {
+  padding: 16px;
+  margin: 20px;
+  align-content: right;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
+}
+
+.booking_form_container {
+  padding-left: 360px;
 }

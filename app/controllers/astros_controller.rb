@@ -1,5 +1,6 @@
 class AstrosController < ApplicationController
   before_action :set_astro, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @astros = Astro.all
