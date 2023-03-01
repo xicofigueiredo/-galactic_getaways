@@ -35,7 +35,7 @@ class AstrosController < ApplicationController
 
   def destroy
     @astro.destroy
-    redirect_to astro_path(@astro)
+    redirect_to astros_path
   end
 
   private
