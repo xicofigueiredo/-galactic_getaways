@@ -1,7 +1,8 @@
-<h1>Super cool booking form </h1>
+<h2>Book now </h2>
+<h6><strong>Select dates<strong></h6>
 
 <%= simple_form_for [astro, booking] do |f| %>
   <%= f.input :entry_date  %>
   <%= f.input :exit_date %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.button :submit, class: "btn-flat" %>
 <% end %>
