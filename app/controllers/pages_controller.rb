@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def planets
-    @planets = Astro.where(category: "Planet")
+    @planets = Astro.where(category: "planet")
   end
 
   def commets

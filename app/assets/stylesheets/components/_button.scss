@@ -29,3 +29,20 @@
   background: #4D04C4;
   color: white;
 }
+
+
+.btn-delete {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #ff2739;
+  transition: background 0.3s ease;
+  width: 100px;
+  text-align: center;
+  text-size-adjust: 50%;
+}
+
+.btn-delete:hover {
+  background: #4D04C4;
+  color: white;
+}
