@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: :show
+  before_action :set_booking, only: [:show, :confirm]
   before_action :set_astro, only: %i[new create]
 
   def index
@@ -25,9 +25,11 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to astro_path(@astro)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def confirm
   end
 
   private
