@@ -7,22 +7,64 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Astro.destroy_all
 Astro.create!(
-  name: "Uranus",
-  description: "Where light doesnt reach",
-  daily_price: 24,
-  user: User.first
-)
-
-Astro.create!(
-  name: "Venus",
-  description: "Closed as the troia gates",
-  daily_price: 1000,
-  user: User.first
+  name: "Earth 25",
+  description: "where they are super happy and all look beautiful ",
+  rating: 5,
+  daily_price: 2,
+  user: User.first,
+  category: "planet"
 )
 
 Astro.create!(
   name: "Mars",
   description: "Elon Musk rented this twice ",
+  rating: 5,
   daily_price: 2,
-  user: User.first
+  user: User.first,
+  category: "planet"
+)
+
+Astro.create!(
+  name: "CXRT09",
+  description: "Super shiny and fast",
+  rating: 5,
+  daily_price: 2,
+  user: User.first,
+  category: "commet"
+)
+
+Astro.create!(
+  name: "The Milky way",
+  description: "The sexyest galaxy in the universe ",
+  rating: 5,
+  daily_price: 2,
+  user: User.first,
+  category: "galaxy"
+)
+
+Astro.create!(
+  name: "the stone in your kidney",
+  description: "You probably never want to have this! Its super painful",
+  rating: 5,
+  daily_price: 2,
+  user: User.first,
+  category: "asteroid"
+)
+
+Astro.create!(
+  name: "Utapau",
+  description: "The famous Star wars land",
+  rating: 5,
+  daily_price: 2,
+  user: User.first,
+  category: "planet"
+)
+
+Astro.create!(
+  name: "XRay creator",
+  description: "super shiny sun",
+  rating: 5,
+  daily_price: 2,
+  user: User.first,
+  category: "star"
 )
