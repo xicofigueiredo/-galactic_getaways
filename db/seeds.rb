@@ -14,15 +14,15 @@ Astro.create!(
 )
 
 Astro.create!(
-  name: "Myanus",
+  name: "Venus",
   description: "Closed as the troia gates",
   daily_price: 1000,
   user: User.first
 )
 
 Astro.create!(
-  name: "Heranus",
-  description: "Welcome",
+  name: "Mars",
+  description: "Elon Musk rented this twice ",
   daily_price: 2,
   user: User.first
 )

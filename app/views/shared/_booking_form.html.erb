@@ -1,7 +1,7 @@
 <h1>Super cool booking form </h1>
 
-<%= simple_form_for [astro, booking] do |f| %>
-  <%= f.input :entry_date  %>
-  <%= f.input :exit_date %>
+<%= simple_form_for [astro, booking], data: { controller: "bookings", bookings_price_value: astro.daily_price } do |f| %>
+  <%= f.input :entry_date, as: :date, input_html: { data: { bookings_target: "entryDate" }}, html5: true %>
+  <%= f.input :exit_date, as: :date, input_html: { data: { bookings_target: "exitDate" }}, html5: true %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
