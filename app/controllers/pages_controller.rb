@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!
   def home
-    @astros = Astro.limit(6).order('created_at DESC')
+    @astros = Astro.limit(12).order('created_at DESC')
   end
 
   def planets
@@ -27,9 +27,4 @@ class PagesController < ApplicationController
   def mylistings
     @astros = current_user.owned_astros
   end
-
-  def mybookings
-    @bookings = current_user.bookings
-  end
-
 end

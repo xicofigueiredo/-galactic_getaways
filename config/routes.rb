@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: [:show]
+  resources :bookings, only: [:index, :show]
 
   get '/planets', to: 'pages#planets'
   get '/commets', to: 'pages#commets'
