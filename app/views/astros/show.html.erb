@@ -83,31 +83,42 @@
   </div>
 
 
-  <div class="tiny_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1548697143-6a9dc9d9d80f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80);">
+  <%# <div class="tiny_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1548697143-6a9dc9d9d80f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80);">
     <div class="container">
-      <h1><%= @astro.name %></h1>
-      <p><%= @astro.description%></p>
     </div>
+  </div> %>
+
+  <div class="booking_container">
+
+    <div class="description_card">
+      <h1><%= @astro.name %></h1>
+      <h4><%= @astro.description%></h4>
+      <h5>Type of astro: <%= @astro.category %></h5>
+      <h5>Price per night: <%= @astro.daily_price%>€</h5>
+      <h5>Rating: <%= @astro.rating%>4 Stars</h5>
+      <p>Host Id <%= @astro.user_id %></p>
+      <p></p>
+      <h5>How to get there?</h5>
+      <p>You can take one of the public space flights, or if you prefer come visit on of our portals for instant travel.</p>
+      <h5>Rules of conduct</h5>
+      <p>There are no rules here. You can do whatever you want with your astro. You can have intergalactic raves, test nuclear fussion, create an new civilisation made entirely of pink dolphins, reenact star wars or simple chill there with your buddies</p>
+
+    </div>
+
+    <div class="booking_form_container" style:postion:relative>
+      <div class="booking_card" position:absolute>
+        <%= render "shared/booking_form", booking:@booking, astro:@astro %>
+        <%= @booking %>
+      </div>
+    </div>
+
   </div>
 
   <div class="container">
-    <p>Price per night: <%= @astro.daily_price%>€</p>
-    <p>Rating<%= @astro.rating %> Stars</p>
-    <p>Type of astro: <%= @astro.category %></p>
-    <p>Owner <%= @astro.user_id %></p>
+    <ul>
+      <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+      <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+      <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+    </ul>
   </div>
-
-  <div>
-    <%= render "shared/booking_form", booking:@booking, astro:@astro %>
-    <%= @booking %>
-  </div>
-
-
-
-  <ul>
-    <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-    <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-    <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-  </ul>
-
 </body>
