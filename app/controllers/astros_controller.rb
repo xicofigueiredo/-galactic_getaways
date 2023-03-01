@@ -6,6 +6,8 @@ class AstrosController < ApplicationController
   end
 
   def show
+    @astro = Astro.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

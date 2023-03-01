@@ -12,18 +12,21 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    authorize @booking
+    # authorize @booking
+    # render 'new', locals: { booking: @booking }
   end
 
   def create
     @booking = Booking.new(booking_params)
-    authorize @booking
+    # authorize @booking
     @booking.user = current_user
-    @booking.astro = Astro.find(params[:astro_id])
+    @astro = Astro.find(params[:astro_id])
+    @booking.astro = @astro
     if @booking.save
-      redirect_to booking_path(@booking)
-    else
       redirect_to astro_path(@astro)
+    else
+      raise
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,6 +41,9 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params[:booking].permit(:captain, :number_of_guests, :start_date, :end_date)
+    params.require(:booking).permit(:entry_date, :exit_date)
   end
 end
+
+
+# CHAT GTP part
