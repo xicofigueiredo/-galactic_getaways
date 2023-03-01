@@ -1,0 +1,25 @@
+<h1>my bookings</h1>
+
+<div class="container">
+  <ul>
+    <div class="cards">
+        <% @bookings.each do |booking| %>
+          <li>
+           <%= link_to astro_path(booking.astro), style:"text-decoration:none; color:black" do %>
+              <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= booking.astro.name %></h2>
+                    <p><%= booking.astro.category %></p>
+                  </div>
+                  <h2 class="card-trip-pricing">€<%= booking.astro.daily_price %> per day</h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+    </div>
+  </ul>
+</div>

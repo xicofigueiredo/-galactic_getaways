@@ -1,50 +1,65 @@
-<div class="slider-container">
-  <div class="menu">
-    <label for="slide-dot-1"></label>
-    <label for="slide-dot-2"></label>
-    <label for="slide-dot-3"></label>
-  </div>
-  <input id="slide-dot-1" type="radio" name="slides" checked>
-  <div class="slide slide-1"></div>
-  <input id="slide-dot-2" type="radio" name="slides">
-  <div class="slide slide-2"></div>
-  <input id="slide-dot-3" type="radio" name="slides">
-  <div class="slide slide-3"></div>
-</div>
+<html>
+  <head>
+    <title>Astro Details</title>
+    <script>
+      function showBookingConfirmation() {
+        var message = '<%= flash[:notice] %>';
+        if (message !== '') {
+          alert(message);
+        }
+      }
+    </script>
+  </head>
 
-<div class="booking_container">
+  <body onload="showBookingConfirmation()">
 
-  <div class="description_card">
-    <h1><%= @astro.name %></h1>
-    <h4><%= @astro.description%></h4>
-    <h5>Type of astro: <%= @astro.category %></h5>
-    <h5>Price per night: <%= @astro.daily_price%>€</h5>
-    <h5>Rating: <%= @astro.rating%>4 Stars</h5>
-    <p>Host Id <%= @astro.user_id %></p>
-    <p></p>
-    <h5>How to get there?</h5>
-    <p>You can take one of the public space flights, or if you prefer come visit on of our portals for instant travel.</p>
-    <h5>Rules of conduct</h5>
-    <p>There are no rules here. You can do whatever you want with your astro. You can have intergalactic raves, test nuclear fussion, create an new civilisation made entirely of pink dolphins, reenact star wars or simple chill there with your buddies</p>
-
-  </div>
-
-
-  <div class="booking_form_container" style:postion:relative>
-    <div class="booking_card" position:absolute>
-      <%= render "shared/booking_form", booking:@booking, astro:@astro %>
-      <%= @booking %>
+    <div class="slider-container">
+      <div class="menu">
+        <label for="slide-dot-1"></label>
+        <label for="slide-dot-2"></label>
+        <label for="slide-dot-3"></label>
+      </div>
+      <input id="slide-dot-1" type="radio" name="slides" checked>
+      <div class="slide slide-1"></div>
+      <input id="slide-dot-2" type="radio" name="slides">
+      <div class="slide slide-2"></div>
+      <input id="slide-dot-3" type="radio" name="slides">
+      <div class="slide slide-3"></div>
     </div>
-  </div>
 
-</div>
+    <div class="booking_container">
 
-<div class="container">
-  <ul>
-    <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-    <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-    <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-  </ul>
-</div>
-</body>
+      <div class="description_card">
+        <h1><%= @astro.name %></h1>
+        <h4><%= @astro.description%></h4>
+        <h5>Type of astro: <%= @astro.category %></h5>
+        <h5>Price per night: <%= @astro.daily_price%>€</h5>
+        <h5>Rating: <%= @astro.rating%>4 Stars</h5>
+        <p>Host Id <%= @astro.user_id %></p>
+        <p></p>
+        <h5>How to get there?</h5>
+        <p>You can take one of the public space flights, or if you prefer come visit on of our portals for instant travel.</p>
+        <h5>Rules of conduct</h5>
+        <p>There are no rules here. You can do whatever you want with your astro. You can have intergalactic raves, test nuclear fussion, create an new civilisation made entirely of pink dolphins, reenact star wars or simple chill there with your buddies</p>
 
+      </div>
+
+
+      <div class="booking_form_container" style:postion:relative>
+        <div class="booking_card" position:absolute>
+          <%= render "shared/booking_form", booking:@booking, astro:@astro %>
+          <%= @booking %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <ul>
+        <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+        <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+        <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+      </ul>
+    </div>
+  </body>
+</html>
