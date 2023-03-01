@@ -1,0 +1,7 @@
+<h1>Super cool booking form </h1>
+
+<%= simple_form_for [astro, booking] do |f| %>
+  <%= f.input :entry_date  %>
+  <%= f.input :exit_date %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

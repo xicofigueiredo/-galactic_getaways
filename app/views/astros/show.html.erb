@@ -113,11 +113,14 @@
   </div>
 
   <div class="container">
-
     <p>Price per night: <%= @astro.daily_price%>€</p>
     <p>Rating<%= @astro.rating %> Stars</p>
     <p>Type of astro: <%= @astro.category %></p>
     <p>Owner <%= @astro.user_id %></p> 
+</div>
+
+<%= render "shared/booking_form", booking:@booking, astro:@astro %>
+
 
     <ul>
     <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
@@ -126,3 +129,4 @@
     </ul>
 
   </div>
+
