@@ -1,4 +1,31 @@
-Congratulations!
+<br>
+<h1 style="padding-left: 8px">Congratulations!</h1>
+
+<br>
+<br>
+<p style="padding-left: 8px">You have successfully made a reservation (#<%= @booking.id%>)!</p>
 
 
-A booking has been made under <%=@booking.user.name %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# THIS BUTTON IS FOR THE LAST BOOKING CONFIRMATION
+<%= link_to "Confirm", confirm_astro_booking_path(@booking), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+
+<%# THIS BUTTON IS FOR THE MY BOOKINGS %>
+<%# <%= link_to "My bookings", bookings_path(@booking), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>

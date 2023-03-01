@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :confirm]
+  before_action :set_booking, only: %i[show confirm]
   before_action :set_astro, only: %i[new create]
 
   def index
@@ -47,6 +47,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:entry_date, :exit_date)
   end
 end
-
 
 # CHAT GTP part
