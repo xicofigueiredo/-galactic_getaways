@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: [:index, :show]
+  resources :bookings, only: %i[index show]
 
   get '/planets', to: 'pages#planets'
   get '/commets', to: 'pages#commets'
@@ -22,5 +22,4 @@ Rails.application.routes.draw do
   get '/stars', to: 'pages#stars'
   get '/galaxies', to: 'pages#galaxies'
   get '/mylistings', to: 'pages#mylistings'
-  get '/mybookings', to: 'pages#mybookings'
 end
