@@ -10,4 +10,5 @@ class Astro < ApplicationRecord
   enum :category, { planet: 0, commet:
     1, asteroid: 2, star: 3, galaxy: 4 }
   validates :name, :description, :daily_price, :category, presence: true
+  has_many_attached :photos
 end

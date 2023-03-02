@@ -12,6 +12,7 @@
       <%= f.input :description %>
       <%= f.input :daily_price %>
       <%= f.input :category, collection: Astro.categories.keys %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit %>
     <% end %>
   </div>
