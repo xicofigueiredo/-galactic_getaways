@@ -51,13 +51,14 @@
       <% end %>
       </div>
 
-
+      <%# <% if @astro_not.user == current_user %>
       <div class="booking_form_container" style:postion:relative>
         <div class="booking_card" position:absolute>
           <%= render "shared/booking_form", booking:@booking, astro:@astro %>
           <%= @booking %>
         </div>
       </div>
+      <%# <% end %>
 
     </div>
 
