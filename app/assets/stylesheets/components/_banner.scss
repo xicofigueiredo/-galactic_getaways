@@ -53,15 +53,15 @@
   background-position: center;
   padding: 70px 0;
   text-align: left;
-
 }
 
-.small_banner h1 {
+.small_banner h1, h2, h3 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 40px;
   font-weight: bold;
+  text-align: center;
 }
 
 .small_banner p {

@@ -46,3 +46,26 @@
   background: #9d0000;
   color: white;
 }
+
+
+.btn-flat-small {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+  width: 75px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+
+}
+
+.btn-flat-small p {
+  size: 20px;
+}
+
+.btn-flat-small:hover {
+  background: #4D04C4;
+  color: white;
+}
