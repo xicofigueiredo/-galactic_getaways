@@ -9,6 +9,7 @@ export default class extends Controller {
   calculateTotalPrice() {
     const start = new Date(this.entryDateTarget.value)
     const end = new Date(this.exitDateTarget.value)
+    const currentDate = new Date();
     const price = this.priceValue
 
     const nightsMiliseconds = end.getTime() - start.getTime()
@@ -16,7 +17,7 @@ export default class extends Controller {
 
     const totalPrice = nights * price
 
-    if (isNaN(start)){
+    if (isNaN(start) || currentDate > start){
       this.finalPriceTarget.innerText = `Select a valid Entry date`;
     } else if (isNaN(end)){
       this.finalPriceTarget.innerText = `Select a valid Exit date`
