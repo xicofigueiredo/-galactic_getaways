@@ -1,8 +1,10 @@
 <h2>Book now </h2>
+<p></p>
 <h6><strong>Select dates<strong></h6>
 
 <%= simple_form_for [astro, booking], data: { controller: "bookings", bookings_price_value: astro.daily_price } do |f| %>
-  <%= f.input :entry_date, as: :date, input_html: { data: { bookings_target: "entryDate" }}, html5: true %>
-  <%= f.input :exit_date, as: :date, input_html: { data: { bookings_target: "exitDate" }}, html5: true %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.input :entry_date, as: :date, input_html: { data: { bookings_target: "entryDate", action: "change->bookings#calculateTotalPrice"}}, html5: true %>
+  <%= f.input :exit_date, as: :date, input_html: { data: { bookings_target: "exitDate", action: "change->bookings#calculateTotalPrice" }}, html5: true %>
+  <h6 class="d-flex justify-content-center" data-bookings-target="finalPrice"></h6> <p></p>
+  <div class="d-flex justify-content-center"><%= f.button :submit, class: "btn btn-flat d-flex justify-content-center" %></div>
 <% end %>
