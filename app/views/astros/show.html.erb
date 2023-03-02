@@ -42,6 +42,13 @@
         <h5>Rules of conduct</h5>
         <p>There are no rules here. You can do whatever you want with your astro. You can have intergalactic raves, test nuclear fussion, create an new civilisation made entirely of pink dolphins, reenact star wars or simple chill there with your buddies</p>
 
+      <% if @astro.user == current_user %>
+        <ul>
+          <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+          <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+          <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+        </ul>
+      <% end %>
       </div>
 
 
@@ -54,12 +61,7 @@
 
     </div>
 
-    <div class="container">
-      <ul>
-        <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-        <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-        <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-      </ul>
-    </div>
+    <%# <div class="container">
+    </div> %>
   </body>
 </html>

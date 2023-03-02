@@ -3,6 +3,7 @@ class AstrosController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
+
     if params[:search].present?
       sql_query = <<~SQL
       astros.name @@ :query
