@@ -55,11 +55,13 @@
     </div>
 
     <div class="container">
-      <ul>
-        <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-        <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-        <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-      </ul>
+      <% if @astro.user == current_user %>
+        <ul>
+          <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+          <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+          <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+        </ul>
+      <% end %>
     </div>
   </body>
 </html>

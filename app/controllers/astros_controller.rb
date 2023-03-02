@@ -4,6 +4,7 @@ class AstrosController < ApplicationController
 
   def index
     @astros = Astro.all
+    # @astros = Astro.where.not(user: current_user)
   end
 
   def show
