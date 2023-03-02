@@ -6,8 +6,8 @@ class AstrosController < ApplicationController
 
     if params[:search].present?
       sql_query = <<~SQL
-      astros.name @@ :query
-    SQL
+        astros.name @@ :query
+      SQL
       @astros = Astro.where(sql_query, query: "%#{params[:search][:query]}%")
       if @astros.empty?
         @astros = Astro.where(category: params[:search][:query])
