@@ -20,6 +20,7 @@ class AstrosController < ApplicationController
   def show
     @astro = Astro.find(params[:id])
     @booking = Booking.new
+    # @astro_not = Astro.where.not(user: current_user)
   end
 
   def new
