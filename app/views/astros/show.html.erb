@@ -59,11 +59,19 @@
         </div>
       </div>
       <% end %>
-
     </div>
 <hr>
   <% if @astro.photos.size == 1 %>
     <%= image_tag @astro.photos.first %>
+  <% elsif @astro.photos.size > 1 %>
+    <div class="d-flex form_book mb-4">
+      <%= image_tag @astro.photos.first, width: 500, crop: :fill, class: "event-image" %>
+      <div class="events-cards">
+        <% @astro.photos[1..-1].each do |photo| %>
+          <%= image_tag photo, style: "width:100%; height:50%;", class: "event-image" %>
+        <% end %>
+      </div>
+    </div>
   <% else %>
     <img src="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60">
   <% end %>
