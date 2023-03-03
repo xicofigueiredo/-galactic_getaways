@@ -15,7 +15,8 @@
            <%= link_to astro_path(astro), style:"text-decoration:none; color:black;" do %>
               <div class="card-trip">
                 <div class="position-relative">
-                  <img src="https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80" />
+                <% image_url = cl_image_path astro.photos.first.key if astro.photos.attached? %>
+                  <div class="astro-image" style="background-image: url(<%= astro.photos.attached? ? image_url : 'https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80' %>)"></div>
                   <div class="listing_tag">
                     <% if astro.user == current_user %>
                       <span class="badge bg-secondary"> My Listing</span>
