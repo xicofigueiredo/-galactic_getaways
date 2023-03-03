@@ -22,9 +22,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @astro = Astro.find(params[:astro_id])
     @booking.astro = @astro
+    @booking.price = (@booking.exit_date - @booking.entry_date) * @astro.daily_price
     if @booking.save
-      flash[:notice] = "Your booking is confirmed"
-      redirect_to astro_path(@astro)
+      redirect_to confirm_astro_booking_path(@astro, @booking)
     else
       render :new, status: :unprocessable_entity
     end

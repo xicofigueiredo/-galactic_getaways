@@ -11,7 +11,7 @@ Astro.create!(
   description: "where they are super happy and all look beautiful ",
   rating: 5,
   daily_price: 2,
-  user: User.first,
+  user: User.last,
   category: "planet"
 )
 
