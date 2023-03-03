@@ -1,10 +1,10 @@
-<br>
-<h1 style="padding-left: 8px">Congratulations!</h1>
-
-<br>
-<br>
-<p style="padding-left: 8px">You have successfully made a reservation (#<%= @booking.id%>)!</p>
-
+<div style="padding-left: 8px">
+  <h1>Congratulations!</h1>
+  <p>You have successfully made a reservation with the ID #<%= @booking.id%></p>
+  <p>You have booked: "<%= @booking.astro.name.upcase%>"</p>
+  <p> FROM <strong><%= @booking.entry_date %></strong>  TO <strong><%=  @booking.exit_date %></strong></p>
+  <p> <%= link_to "My Bookings", bookings_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></p>
+</div>
 
 
 
