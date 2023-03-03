@@ -11,8 +11,9 @@
           <li>
            <%= link_to astro_path(booking.astro), style:"text-decoration:none; color:black" do %>
               <div class="card-trip">
-                <img src="https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80" />
-                <div class="card-trip-infos">
+                  <% image_url = cl_image_path astro.photos.first.key if booking.astro.photos.attached? %>
+                  <% display_pics = ['https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80', 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80', 'https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2902&q=80', 'https://images.ctfassets.net/cnu0m8re1exe/31CAgXLmRrvJg4Vw3cs3h2/51bda4639b4d05d8371b588af7d9c95b/shutterstock_1649833612.jpg', 'https://d2r55xnwy6nx47.cloudfront.net/uploads/2018/07/SolarFull_SeanDoran_2880FullwidthLede.jpg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/800px-Andromeda_Galaxy_560mm_FL.jpg']%>
+                  <div class="astro-image" style="background-image: url(<%= booking.astro.photos.attached? ? image_url : display_pics.sample %>)"></div>                <div class="card-trip-infos">
                   <div>
                     <h2><%= booking.astro.name %></h2>
                     <h5>Entry date: <%= booking.entry_date %></h5>
