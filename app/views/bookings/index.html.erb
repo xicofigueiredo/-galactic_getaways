@@ -15,10 +15,11 @@
                 <div class="card-trip-infos">
                   <div>
                     <h2><%= booking.astro.name %></h2>
-                    <p><%= booking.astro.category %></p>
+                    <h5>Entry date: <%= booking.entry_date %></h5>
+                    <h5>Exit date: <%= booking.exit_date %></h5>
                   </div>
-                  <h2 class="card-trip-pricing">€<%= booking.astro.daily_price %> per day</h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <p class="card-trip-pricing">€<%= booking.astro.daily_price %> Price paid</p>
+                    <p><%= booking.astro.category %></p>
                 </div>
               </div>
             <% end %>
