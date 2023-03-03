@@ -1,79 +1,101 @@
-<html>
-  <head>
-    <title>Astro Details</title>
-    <script>
-      function showBookingConfirmation() {
-        var message = '<%= flash[:notice] %>';
-        if (message !== '') {
-          alert(message);
-        }
-      }
-    </script>
-  </head>
-
-  <body onload="showBookingConfirmation()">
-
-    <div class="slider-container">
-      <div class="menu">
-        <label for="slide-dot-1"></label>
-        <label for="slide-dot-2"></label>
-        <label for="slide-dot-3"></label>
-      </div>
-      <input id="slide-dot-1" type="radio" name="slides" checked>
-      <div class="slide slide-1" style=""></div>
-      <input id="slide-dot-2" type="radio" name="slides">
-      <div class="slide slide-2"></div>
-      <input id="slide-dot-3" type="radio" name="slides">
-      <div class="slide slide-3"></div>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="..." style="height:300px">
     </div>
-
-    <div class="booking_container">
-
-      <div class="description_card">
-        <h1><%= @astro.name %></h1>
-        <h4><%= @astro.description%></h4>
-        <h5>Type of astro: <%= @astro.category %></h5>
-        <h5>Price per night: <%= @astro.daily_price%>€</h5>
-        <h5>Rating: <%= @astro.rating%>4 Stars</h5>
-        <p>Host Id <%= @astro.user_id %></p>
-        <p></p>
-        <h5>How to get there?</h5>
-        <p>You can take one of the public space flights, or if you prefer come visit on of our portals for instant travel.</p>
-        <h5>Rules of conduct</h5>
-        <p>There are no rules here. You can do whatever you want with your astro. You can have intergalactic raves, test nuclear fussion, create an new civilisation made entirely of pink dolphins, reenact star wars or simple chill there with your buddies</p>
-        <% admin = User.new(email: "admin", password: "111222")%>
-      <% if @astro.user == current_user || current_user == admin%>
-        <h4 >Edit your Astro Listing</h4>
-        <ul class="d-flex justify-content-start" style="padding-left: 0px;">
-          <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-          <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
-          <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-        </ul>
-      <% end %>
-      </div>
-
-      <% if @astro.user != current_user || current_user == admin%>
-      <div class="booking_form_container" style:postion:relative>
-        <div class="booking_card" position:absolute>
-          <%= render "shared/booking_form", booking:@booking, astro:@astro %>
-        </div>
-      </div>
-      <% end %>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="..." style="height:300px">
     </div>
-<hr>
-  <% if @astro.photos.size == 1 %>
-    <%= image_tag @astro.photos.first %>
-  <% elsif @astro.photos.size > 1 %>
-    <div class="d-flex form_book mb-4">
-      <%= image_tag @astro.photos.first, width: 500, crop: :fill, class: "event-image" %>
-      <div class="events-cards">
-        <% @astro.photos[1..-1].each do |photo| %>
-          <%= image_tag photo, style: "width:100%; height:50%;", class: "event-image" %>
-        <% end %>
-      </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="..." style="height:300px">
     </div>
-  <% else %>
-    <img src="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60">
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="booking_container">
+
+  <div class="description_card">
+    <h1><%= @astro.name %></h1>
+    <h4><%= @astro.description%></h4>
+    <h5>Type of astro: <%= @astro.category %></h5>
+    <h5>Price per night: <%= @astro.daily_price%>€</h5>
+    <h5>Rating: <%= @astro.rating%>4 Stars</h5>
+    <p>Host Id <%= @astro.user_id %></p>
+    <p></p>
+    <h5>How to get there?</h5>
+    <p>You can take one of the public space flights, or if you prefer come visit on of our portals for instant travel.</p>
+    <h5>Rules of conduct</h5>
+    <p>There are no rules here. You can do whatever you want with your astro. You can have intergalactic raves, test nuclear fussion, create an new civilisation made entirely of pink dolphins, reenact star wars or simple chill there with your buddies</p>
+    <% admin = User.new(email: "admin", password: "111222")%>
+  <% if @astro.user == current_user || current_user == admin%>
+    <h4 >Edit your Astro Listing</h4>
+    <ul class="d-flex justify-content-start" style="padding-left: 0px;">
+      <li><%= link_to "Edit Astro", edit_astro_path(@astro), style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+      <li><%= link_to "Back to list", astros_path, style: "color:white", class: "d-block btn-flat text-decoration-none" %></li>
+      <li><%= link_to "Delete Astro", astro_path(@astro), style: "color:white", class: "d-block btn-delete text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+    </ul>
   <% end %>
-  </body>
-</html>
+  </div>
+
+  <% if @astro.user != current_user || current_user == admin%>
+  <div class="booking_form_container" style:postion:relative>
+    <div class="booking_card" position:absolute>
+      <%= render "shared/booking_form", booking:@booking, astro:@astro %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<hr>
+
+<% if @astro.photos.size == 1 %>
+  <%= image_tag @astro.photos.first %>
+<% elsif @astro.photos.size > 1 %>
+  <div class="d-flex form_book mb-4">
+    <%= image_tag @astro.photos.first, width: 500, crop: :fill, class: "event-image" %>
+    <div class="events-cards">
+      <% @astro.photos[1..-1].each do |photo| %>
+        <%= image_tag photo, style: "width:100%; height:50%;", class: "event-image" %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <img src="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60">
+<% end %>
+
+
+
+
+
+
+<div class="row pt-4">
+    <div id="carouselExampleIndicators" class="carousel slide col-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <% @astro.photos.count.times do |index| %>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %>" class="active" aria-current="true" aria-label="astro"></button>
+      <% end %>
+    </div>
+    <div class="carousel-inner">
+      <% @astro.photos.each_with_index do |photo, index| %>
+        <div class="carousel-item<%= ' active' if index == 0 %>">
+          <%= image_tag photo, height: 300, width: 400, crop: :fill, class:"d-block w-100", id:"our-carousel-image" %>
+        </div>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<%# end of bootstrap test %>
