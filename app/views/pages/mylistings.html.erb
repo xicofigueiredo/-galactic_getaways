@@ -1,4 +1,4 @@
-<div class="small_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3013&q=80);">
+<div class="small_banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);">
 <h1>My Listings</h1>
 <h5> Make some good bucks with these badass Astros</h5>
 </div>
@@ -12,7 +12,8 @@
            <%= link_to astro_path(astro), style:"text-decoration:none; color:black;" do %>
               <div class="card-trip">
                 <div class="position-relative">
-                  <img src="https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80" />
+                <% image_url = cl_image_path astro.photos.first.key if astro.photos.attached? %>
+                  <div class="astro-image" style="background-image: url(<%= astro.photos.attached? ? image_url : 'https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2030&q=80' %>)"></div>
                   <div class="listing_tag">
                     <% if astro.user == current_user %>
                       <span class="badge bg-secondary"> My Listing</span>
