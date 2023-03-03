@@ -6,23 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 Astro.destroy_all
-Astro.create!(
-  name: "Earth 25",
-  description: "where they are super happy and all look beautiful ",
-  rating: 5,
-  daily_price: 2,
-  user: User.last,
-  category: "planet"
-)
-
-Astro.create!(
-  name: "Mars",
-  description: "Elon Musk rented this twice ",
-  rating: 5,
-  daily_price: 2,
-  user: User.first,
-  category: "planet"
-)
 
 Astro.create!(
   name: "CXRT09",
@@ -34,37 +17,10 @@ Astro.create!(
 )
 
 Astro.create!(
-  name: "The Milky way",
-  description: "The sexyest galaxy in the universe ",
-  rating: 5,
-  daily_price: 2,
-  user: User.first,
-  category: "galaxy"
-)
-
-Astro.create!(
   name: "the stone in your kidney",
   description: "You probably never want to have this! Its super painful",
   rating: 5,
   daily_price: 2,
   user: User.first,
   category: "asteroid"
-)
-
-Astro.create!(
-  name: "Utapau",
-  description: "The famous Star wars land",
-  rating: 5,
-  daily_price: 2,
-  user: User.first,
-  category: "planet"
-)
-
-Astro.create!(
-  name: "XRay creator",
-  description: "super shiny sun",
-  rating: 5,
-  daily_price: 2,
-  user: User.first,
-  category: "star"
 )
