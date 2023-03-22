@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+1st Team project where we were supposed to recreate an Airbnb type of website. We chose to go for a different and fun product and we decided to call it Galactic Getaways.
+
+See it for yourself!
